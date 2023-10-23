@@ -26,13 +26,14 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-height: 100vh;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 h1 {
-  font-size: 3.2em; 
+  font-size: 3.2em;
   line-height: 1.1;
 }
 
@@ -44,16 +45,14 @@ h1 {
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em hwb(237 13% 7% / 0.975));
 }
 .logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
+  filter: drop-shadow(0 0 2em hsl(211, 87%, 41%));
 }
 
 .card {
@@ -96,14 +95,34 @@ button:focus-visible {
   }
 }
 
+@media only screen and (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+  .slogon {
+    margin-top: 2rem;
+    margin-left: 2rem !important;
+  }
+  #utmost-iframe {
+    height: 700px;
+    width: calc(100% - 40px) !important;
+    margin-top: 6rem !important;
+  }
+}
+
 #utmost-iframe {
   height: 700px;
   width: 400px;
+  margin: 1rem;
   border-radius: 20px;
   border: 2px solid #ebebeb;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .slogon {
-  margin: 0 100px;
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 500px;
 }
